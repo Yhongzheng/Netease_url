@@ -1,0 +1,184 @@
+2025-11-26 09:44:29,346 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2025-11-26 09:44:49,889 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+2025-11-26 09:44:49,897 - music_api - INFO - after_request:230 - 响应状态: 200
+2025-11-26 09:44:50,231 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+2025-11-26 09:44:50,232 - music_api - INFO - after_request:230 - 响应状态: 404
+2025-11-26 09:45:11,109 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+2025-11-26 09:45:15,987 - music_api - INFO - download_music_api:561 - 下载完成: One More Light [lossless].flac
+2025-11-26 09:45:15,987 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:12:06,889 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-22 11:12:14,372 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:12:14,459 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:12:14,904 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:12:14,905 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-22 11:12:25,140 - music_api - INFO - before_request:215 - GET / - IP: 192.168.5.61 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:12:25,141 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:12:25,463 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 192.168.5.61 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:12:25,464 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-22 11:27:13,810 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-22 11:27:21,182 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:27:21,191 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:27:26,694 - music_api - INFO - before_request:215 - GET / - IP: 192.168.5.61 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:27:26,695 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:27:55,664 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:27:59,497 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:28:15,432 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:28:19,171 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:29:09,044 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:29:09,045 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:29:09,379 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:29:09,379 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-22 11:30:52,295 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:30:52,295 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:30:52,579 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:30:52,579 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-22 11:31:21,925 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:31:21,926 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-22 11:32:23,633 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-22 11:32:26,837 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:32:26,846 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:32:47,929 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:32:57,566 - music_api - INFO - download_music_api:561 - 下载完成: 守在原地爱你 [exhigh].mp3
+2026-01-22 11:32:57,567 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:33:34,034 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:33:40,588 - music_api - INFO - download_music_api:561 - 下载完成: 守在原地爱你 [exhigh].mp3
+2026-01-22 11:33:40,588 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:34:15,426 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:34:24,930 - music_api - INFO - download_music_api:561 - 下载完成: 云 [exhigh].mp3
+2026-01-22 11:34:24,931 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:34:51,154 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:35:00,709 - music_api - INFO - download_music_api:561 - 下载完成: 风夏 [exhigh].mp3
+2026-01-22 11:35:00,711 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:38:37,449 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:38:46,965 - music_api - INFO - download_music_api:561 - 下载完成: 分针转到12点 [exhigh].mp3
+2026-01-22 11:38:46,966 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:39:12,002 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:39:20,879 - music_api - INFO - download_music_api:561 - 下载完成: 浪漫花海 [exhigh].mp3
+2026-01-22 11:39:20,880 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:39:43,929 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:39:53,339 - music_api - INFO - download_music_api:561 - 下载完成: 遇见一个你 [exhigh].mp3
+2026-01-22 11:39:53,340 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:42:49,018 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:42:57,695 - music_api - INFO - download_music_api:561 - 下载完成: 仰望星空 [exhigh].mp3
+2026-01-22 11:42:57,695 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:44:18,676 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:44:27,172 - music_api - INFO - download_music_api:561 - 下载完成: 脚本 [exhigh].mp3
+2026-01-22 11:44:27,173 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:44:55,996 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:44:59,772 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:45:17,339 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:45:25,890 - music_api - INFO - download_music_api:561 - 下载完成: 这次你真的走了 [exhigh].mp3
+2026-01-22 11:45:25,891 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:51:46,632 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:51:50,603 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:52:09,102 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:52:15,727 - music_api - INFO - download_music_api:561 - 下载完成: 这次你真的走了 [exhigh].mp3
+2026-01-22 11:52:15,727 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:52:45,477 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:52:51,830 - music_api - INFO - download_music_api:561 - 下载完成: 这次你真的走了 [exhigh].mp3
+2026-01-22 11:52:51,830 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:53:48,983 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:53:52,825 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:54:01,039 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:54:09,799 - music_api - INFO - download_music_api:561 - 下载完成: 备注·2023 [exhigh].mp3
+2026-01-22 11:54:09,800 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:54:45,054 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:54:54,338 - music_api - INFO - download_music_api:561 - 下载完成: 见一面 [exhigh].mp3
+2026-01-22 11:54:54,339 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:55:40,872 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:55:50,595 - music_api - INFO - download_music_api:561 - 下载完成: 一个人 [exhigh].mp3
+2026-01-22 11:55:50,596 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:56:31,367 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:56:40,061 - music_api - INFO - download_music_api:561 - 下载完成: 先动心的人一败涂地 [exhigh].mp3
+2026-01-22 11:56:40,062 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:57:04,414 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:57:14,425 - music_api - INFO - download_music_api:561 - 下载完成: 一个人走 [exhigh].mp3
+2026-01-22 11:57:14,426 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:58:06,799 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:58:15,256 - music_api - INFO - download_music_api:561 - 下载完成: 黄昏海岸线 [exhigh].mp3
+2026-01-22 11:58:15,257 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-22 11:58:35,408 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+2026-01-22 11:58:43,996 - music_api - INFO - download_music_api:561 - 下载完成: 石沉大海 [exhigh].mp3
+2026-01-22 11:58:43,996 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:09:04,580 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-23 09:09:13,202 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:09:13,211 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:09:13,534 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:09:13,534 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-23 09:09:53,111 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:10:02,229 - music_api - INFO - download_music_api:561 - 下载完成: 秋日物语 [exhigh].mp3
+2026-01-23 09:10:02,233 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:10:18,549 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:10:27,373 - music_api - INFO - download_music_api:561 - 下载完成: 顶级浪漫 [exhigh].mp3
+2026-01-23 09:10:27,374 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:10:38,406 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:10:46,479 - music_api - INFO - download_music_api:561 - 下载完成: 简简单单 [exhigh].mp3
+2026-01-23 09:10:46,480 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:10:56,015 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:11:04,045 - music_api - INFO - download_music_api:561 - 下载完成: 有没有动心 [exhigh].mp3
+2026-01-23 09:11:04,045 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:11:14,998 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:11:23,167 - music_api - INFO - download_music_api:561 - 下载完成: 灰 [exhigh].mp3
+2026-01-23 09:11:23,167 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-23 09:11:34,271 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-23 09:11:42,536 - music_api - INFO - download_music_api:561 - 下载完成: 晚星排排坐 [exhigh].mp3
+2026-01-23 09:11:42,537 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:18:00,826 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-26 14:18:02,963 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:18:02,970 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:18:03,243 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:18:03,244 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-01-26 14:19:56,892 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:20:14,131 - music_api - INFO - download_music_api:561 - 下载完成: 浪漫的意义 [exhigh].mp3
+2026-01-26 14:20:14,131 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:20:34,386 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:20:55,903 - music_api - INFO - download_music_api:561 - 下载完成: 学会自己长大 [exhigh].mp3
+2026-01-26 14:20:55,904 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:21:07,770 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:21:16,703 - music_api - INFO - download_music_api:561 - 下载完成: 捕捉 [exhigh].mp3
+2026-01-26 14:21:16,704 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:21:31,109 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:21:39,556 - music_api - INFO - download_music_api:561 - 下载完成: 17 [exhigh].mp3
+2026-01-26 14:21:39,558 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:22:07,661 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:22:19,152 - music_api - INFO - download_music_api:561 - 下载完成: 命中注定的结局 [exhigh].mp3
+2026-01-26 14:22:19,152 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:22:29,259 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:22:37,441 - music_api - INFO - download_music_api:561 - 下载完成: 傻傻love [exhigh].mp3
+2026-01-26 14:22:37,441 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:22:54,794 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:23:06,648 - music_api - INFO - download_music_api:561 - 下载完成: 时间更改 [exhigh].mp3
+2026-01-26 14:23:06,648 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:23:17,683 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:23:26,536 - music_api - INFO - download_music_api:561 - 下载完成: 呼吸和你 [exhigh].mp3
+2026-01-26 14:23:26,537 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:23:36,677 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:23:48,711 - music_api - INFO - download_music_api:561 - 下载完成: 南北极 [exhigh].mp3
+2026-01-26 14:23:48,711 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:23:59,098 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:24:09,770 - music_api - INFO - download_music_api:561 - 下载完成: 夏日瞬间 [exhigh].mp3
+2026-01-26 14:24:09,771 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:24:19,178 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:24:28,759 - music_api - INFO - download_music_api:561 - 下载完成: 暗恋 [exhigh].mp3
+2026-01-26 14:24:28,760 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-26 14:24:39,818 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-26 14:24:50,638 - music_api - INFO - download_music_api:561 - 下载完成: 痛吗？ [exhigh].mp3
+2026-01-26 14:24:50,638 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:34:09,474 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-01-27 11:34:24,490 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:34:24,497 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:34:29,192 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:34:39,124 - music_api - INFO - download_music_api:561 - 下载完成: 回忆似场雨 [exhigh].mp3
+2026-01-27 11:34:39,124 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:34:50,824 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:35:00,409 - music_api - INFO - download_music_api:561 - 下载完成: 漫漫 [exhigh].mp3
+2026-01-27 11:35:00,409 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:35:09,046 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:35:19,579 - music_api - INFO - download_music_api:561 - 下载完成: 裙摆与向日葵花 [exhigh].mp3
+2026-01-27 11:35:19,579 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:35:29,241 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:35:42,126 - music_api - INFO - download_music_api:561 - 下载完成: 月光如你 [exhigh].mp3
+2026-01-27 11:35:42,127 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-01-27 11:35:53,062 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+2026-01-27 11:36:06,621 - music_api - INFO - download_music_api:561 - 下载完成: 风，雾，阳光和你 [exhigh].mp3
+2026-01-27 11:36:06,622 - music_api - INFO - after_request:230 - 响应状态: 200
