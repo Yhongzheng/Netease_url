@@ -364,12 +364,26 @@ class NeteaseAPI:
                 
                 song_result = song_resp.json()
                 for song in song_result.get('songs', []):
+                    if not song:
+                        continue
+
+                    song_id = song.get('id')
+                    if not song_id:
+                        continue
+
+                    artists = [
+                        str(artist.get('name')).strip()
+                        for artist in song.get('ar', [])
+                        if artist and artist.get('name')
+                    ]
+                    album = song.get('al') or {}
+
                     info['tracks'].append({
-                        'id': song['id'],
-                        'name': song['name'],
-                        'artists': '/'.join(artist['name'] for artist in song['ar']),
-                        'album': song['al']['name'],
-                        'picUrl': song['al']['picUrl']
+                        'id': song_id,
+                        'name': song.get('name') or f"歌曲{song_id}",
+                        'artists': '/'.join(artists) if artists else '未知歌手',
+                        'album': album.get('name') or '',
+                        'picUrl': album.get('picUrl') or ''
                     })
             
             return info

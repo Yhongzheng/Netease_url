@@ -442,6 +442,7 @@ def get_playlist():
         if validation_error:
             return validation_error
 
+        playlist_id = api_service._extract_music_id(playlist_id)
         cookies = api_service._get_cookies()
         result = playlist_detail(playlist_id, cookies)
 
