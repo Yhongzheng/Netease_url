@@ -182,3 +182,345 @@
 2026-01-27 11:35:53,062 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
 2026-01-27 11:36:06,621 - music_api - INFO - download_music_api:561 - 下载完成: 风，雾，阳光和你 [exhigh].mp3
 2026-01-27 11:36:06,622 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-01 22:50:17,564 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-02 02:06:46,312 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-02 02:06:48,591 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:06:48,598 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-02 02:06:48,994 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:06:48,994 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-05-02 02:07:03,870 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:07:05,078 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-02 02:07:14,980 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:07:18,006 - music_api - INFO - download_music_api:561 - 下载完成: 山雀 [lossless].mp3
+2026-05-02 02:07:18,007 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-02 02:07:43,419 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:07:46,161 - music_api - INFO - download_music_api:561 - 下载完成: It’s Okay Today [lossless].mp3
+2026-05-02 02:07:46,162 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-02 02:08:01,979 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:08:04,510 - music_api - INFO - download_music_api:561 - 下载完成: 花间 [exhigh].mp3
+2026-05-02 02:08:04,510 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-02 02:08:20,785 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+2026-05-02 02:08:23,658 - music_api - INFO - download_music_api:561 - 下载完成: 我和远方 [exhigh].mp3
+2026-05-02 02:08:23,659 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:44:51,655 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-17 00:44:54,718 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:44:54,728 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:44:55,230 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:44:55,231 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-05-17 00:45:25,933 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:45:48,457 - music_api - ERROR - download_music_api:604 - 下载音乐异常: HTTP请求失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\http\client.py", line 1430, in getresponse
+    response.begin()
+  File "D:\Program Files\Python\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\Lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Program Files\Python\Lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\http\client.py", line 1430, in getresponse
+    response.begin()
+  File "D:\Program Files\Python\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\music_api.py", line 120, in post_request
+    response = requests.post(url, headers=headers, cookies=request_cookies,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Python\Lib\site-packages\requests\adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 520, in download_music_api
+    url_info = url_v1(music_id, quality, cookies)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 619, in url_v1
+    return api.get_song_url(song_id, level, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 188, in get_song_url
+    response_text = self.http_client.post_request(APIConstants.SONG_URL_V1, params, cookies)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 125, in post_request
+    raise APIException(f"HTTP请求失败: {e}")
+music_api.APIException: HTTP请求失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2026-05-17 00:45:48,473 - music_api - INFO - after_request:230 - 响应状态: 500
+2026-05-17 00:46:03,324 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:46:04,567 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:46:26,116 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:46:29,333 - music_api - INFO - download_music_api:561 - 下载完成: Echoes(往日回响) [lossless].flac
+2026-05-17 00:46:29,334 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:47:24,552 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:47:27,287 - music_api - INFO - download_music_api:561 - 下载完成: 半壶纱（冒毛猫评论） [lossless].flac
+2026-05-17 00:47:27,288 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:47:44,377 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:47:49,454 - music_api - INFO - download_music_api:561 - 下载完成: 郭源潮 [lossless].flac
+2026-05-17 00:47:49,455 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-17 00:48:31,560 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-17 00:48:35,192 - music_api - INFO - download_music_api:561 - 下载完成: 傻傻love [lossless].flac
+2026-05-17 00:48:35,192 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-23 23:36:02,492 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-23 23:36:05,622 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-23 23:36:05,629 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-23 23:36:06,020 - music_api - INFO - before_request:215 - GET /favicon.ico - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-23 23:36:06,020 - music_api - INFO - after_request:230 - 响应状态: 404
+2026-05-23 23:51:24,899 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-23 23:51:26,162 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-23 23:51:53,118 - music_api - INFO - before_request:215 - POST /Song_V1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-23 23:51:54,276 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-23 23:52:14,253 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-23 23:52:16,959 - music_api - INFO - download_music_api:561 - 下载完成: Echoes(往日回响) [lossless].flac
+2026-05-23 23:52:16,961 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:22:25,456 - music_api - INFO - __init__:90 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:22:27,018 - music_api - INFO - before_request:215 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:22:27,024 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:22:40,310 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:22:42,226 - music_api - INFO - download_music_api:561 - 下载完成: Echoes(往日回响) [lossless].flac
+2026-05-24 00:22:42,227 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:27:31,333 - music_api - INFO - before_request:215 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:27:32,161 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:27:40,693 - music_api - INFO - before_request:215 - POST /Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:27:44,270 - music_api - INFO - download_music_api:561 - 下载完成: 郭源潮 [lossless].flac
+2026-05-24 00:27:44,271 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:28:10,257 - music_api - INFO - before_request:215 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:28:11,064 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:29:15,072 - music_api - INFO - before_request:215 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:29:15,921 - music_api - INFO - after_request:230 - 响应状态: 200
+2026-05-24 00:42:47,093 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:42:47,106 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 00:42:47,109 - music_api - WARNING - download_playlist_api:681 - 歌单歌曲下载失败: 2 - blocked
+2026-05-24 00:42:47,112 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:43:23,449 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:43:23,463 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 00:43:23,465 - music_api - WARNING - download_playlist_api:681 - 歌单歌曲下载失败: 2 - blocked
+2026-05-24 00:43:23,468 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:43:23,473 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 00:43:23,474 - music_api - WARNING - download_playlist_api:681 - 歌单歌曲下载失败: 9 - all blocked
+2026-05-24 00:43:23,475 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 00:44:49,595 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:44:49,606 - music_api - INFO - before_request:221 - POST /Download - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 00:44:49,607 - music_api - INFO - download_music_api:555 - 下载完成: Artist - Actual Name.mp3
+2026-05-24 00:44:49,608 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:45:39,316 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:45:41,131 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:45:41,139 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:45:56,837 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:45:57,591 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:45:59,745 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:46:06,919 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:47:57,680 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:47:57,694 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 00:47:57,697 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:50:55,226 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:50:56,977 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 00:50:56,978 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 00:51:24,853 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:51:26,319 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:51:26,326 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:51:31,898 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 00:51:33,673 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 00:51:33,673 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 00:55:46,565 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:56:20,658 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.31651 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36
+2026-05-24 00:56:20,658 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:56:21,199 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.31651 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36
+2026-05-24 00:56:22,373 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:56:33,580 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.8115
+2026-05-24 00:56:33,580 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:56:47,196 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.8115
+2026-05-24 00:56:47,197 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:57:00,096 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.8115
+2026-05-24 00:57:00,096 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:59:11,532 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 00:59:26,375 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.8115
+2026-05-24 00:59:26,382 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:59:45,247 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.31651 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36
+2026-05-24 00:59:45,247 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 00:59:47,694 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.31651 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36
+2026-05-24 00:59:48,976 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:05:27,850 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:05:29,317 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:05:29,325 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:05:42,895 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:05:44,618 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 01:05:44,619 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:05:49,952 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:05:51,657 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 01:05:51,658 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:06:08,413 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:06:09,260 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:06:38,899 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:06:40,673 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 01:06:40,673 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:06:45,887 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:06:47,589 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 01:06:47,590 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:14:04,372 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:14:19,250 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:14:19,260 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 01:14:19,664 - music_api - ERROR - get_playlist:457 - 获取歌单异常: 获取歌单详情失败: 请求参数错误
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 342, in get_playlist_detail
+    raise APIException(f"获取歌单详情失败: {result.get('message', '未知错误')}")
+music_api.APIException: 获取歌单详情失败: 请求参数错误
+
+2026-05-24 01:14:19,664 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:14:19,666 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 01:14:21,521 - music_api - ERROR - get_playlist:457 - 获取歌单异常: sequence item 0: expected str instance, NoneType found
+Traceback (most recent call last):
+  File "D:\GitHub\Netease_url\main.py", line 446, in get_playlist
+    result = playlist_detail(playlist_id, cookies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 643, in playlist_detail
+    return api.get_playlist_detail(playlist_id, cookies)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GitHub\Netease_url\music_api.py", line 370, in get_playlist_detail
+    'artists': '/'.join(artist['name'] for artist in song['ar']),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, NoneType found
+
+2026-05-24 01:14:21,521 - music_api - INFO - after_request:236 - 响应状态: 500
+2026-05-24 01:18:06,341 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:18:06,350 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 01:18:08,579 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:18:26,780 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:18:26,790 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Werkzeug/3.1.3
+2026-05-24 01:18:29,109 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:20:51,201 - music_api - INFO - __init__:96 - 音乐API服务初始化完成，下载目录: D:\GitHub\Netease_url\downloads
+2026-05-24 01:20:52,503 - music_api - INFO - before_request:221 - GET / - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:20:52,511 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:21:07,414 - music_api - INFO - before_request:221 - GET /Playlist - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+2026-05-24 01:21:09,662 - music_api - INFO - after_request:236 - 响应状态: 200
+2026-05-24 01:21:16,733 - music_api - INFO - before_request:221 - POST /Playlist/Download - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
