@@ -248,6 +248,10 @@
                         <button type="button" id="playlist-download-all" class="btn btn-success btn-sm">下载全部</button>
                     </div>
                     <div id="playlist-download-status" class="mt-2 text-muted small"></div>
+                    <div id="playlist-download-progress" class="progress mt-2 d-none" style="height:8px;">
+                        <div id="playlist-download-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width:0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div id="playlist-download-detail" class="mt-1 text-muted small"></div>
                 </div>
             </div>
             <ul class="list-group mt-3" id="playlist-tracks"></ul>
@@ -379,6 +383,55 @@
                     callback(fallback);
                 };
                 reader.readAsText(xhr.response);
+            }
+
+            function createPlaylistProgressId() {
+                return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+            }
+
+            function resetPlaylistDownloadProgress() {
+                $('#playlist-download-progress').addClass('d-none');
+                $('#playlist-download-progress-bar')
+                    .css('width', '0%')
+                    .attr('aria-valuenow', 0)
+                    .removeClass('bg-danger')
+                    .addClass('bg-success')
+                    .text('');
+                $('#playlist-download-detail').text('');
+            }
+
+            function renderPlaylistDownloadProgress(progress) {
+                const total = Number(progress.total) || 0;
+                const completed = Number(progress.completed) || 0;
+                const success = Number(progress.success) || 0;
+                const failed = Number(progress.failed) || 0;
+                const percent = Math.max(0, Math.min(100, Number(progress.percent) || 0));
+                const message = progress.message || '正在下载并打包歌单，请稍候...';
+
+                $('#playlist-download-progress').removeClass('d-none');
+                $('#playlist-download-progress-bar')
+                    .css('width', `${percent}%`)
+                    .attr('aria-valuenow', percent)
+                    .toggleClass('bg-danger', progress.status === 'failed')
+                    .toggleClass('bg-success', progress.status !== 'failed');
+
+                if (total > 0) {
+                    $('#playlist-download-status').text(`${message}（${completed}/${total}，成功 ${success}，失败 ${failed}，${percent}%）`);
+                } else {
+                    $('#playlist-download-status').text(message);
+                }
+
+                $('#playlist-download-detail').text(progress.current ? `当前：${progress.current}` : '');
+            }
+
+            function startPlaylistProgressPolling(progressId) {
+                return window.setInterval(function() {
+                    $.get('/Playlist/Download/Progress', { progress_id: progressId }, function(data) {
+                        if (data.success && data.data) {
+                            renderPlaylistDownloadProgress(data.data);
+                        }
+                    }, 'json');
+                }, 1000);
             }
 
             function extractLinks(text) {
@@ -590,6 +643,7 @@
                         $('#playlist-count').text(pl.trackCount);
                         $('#playlist-download-all').data('id', pid).prop('disabled', false).text('下载全部');
                         $('#playlist-download-status').text('');
+                        resetPlaylistDownloadProgress();
                         $('#playlist-tracks').empty();
                         pl.tracks.forEach(function(song, idx) {
                             const item = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -777,7 +831,12 @@
                 }
 
                 button.prop('disabled', true).text('打包中...');
+                resetPlaylistDownloadProgress();
                 $('#playlist-download-status').text('正在下载并打包歌单，请稍候...');
+                $('#playlist-download-progress').removeClass('d-none');
+
+                const progressId = createPlaylistProgressId();
+                const progressTimer = startPlaylistProgressPolling(progressId);
 
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', '/Playlist/Download', true);
@@ -785,14 +844,24 @@
                 xhr.responseType = 'blob';
 
                 xhr.onload = function() {
+                    window.clearInterval(progressTimer);
                     if (xhr.status === 200) {
                         const filename = getDownloadFilename(xhr, 'playlist.zip');
                         saveBlob(xhr.response, filename);
                         $('#playlist-download-status').text(`歌单打包完成：${filename}`);
+                        $('#playlist-download-progress-bar')
+                            .css('width', '100%')
+                            .attr('aria-valuenow', 100)
+                            .removeClass('bg-danger')
+                            .addClass('bg-success');
+                        $('#playlist-download-detail').text('');
                         alert('✅ 歌单打包下载完成！');
                     } else {
                         readBlobError(xhr, '歌单下载失败，请重试', function(message) {
                             $('#playlist-download-status').text(message);
+                            $('#playlist-download-progress-bar')
+                                .removeClass('bg-success')
+                                .addClass('bg-danger');
                             alert(message);
                         });
                     }
@@ -800,12 +869,16 @@
                 };
 
                 xhr.onerror = function() {
+                    window.clearInterval(progressTimer);
                     $('#playlist-download-status').text('歌单下载出错，请重试');
+                    $('#playlist-download-progress-bar')
+                        .removeClass('bg-success')
+                        .addClass('bg-danger');
                     alert('歌单下载出错，请重试');
                     button.prop('disabled', false).text('下载全部');
                 };
 
-                const formData = `id=${encodeURIComponent(playlistId)}&quality=${encodeURIComponent(quality)}`;
+                const formData = `id=${encodeURIComponent(playlistId)}&quality=${encodeURIComponent(quality)}&progress_id=${encodeURIComponent(progressId)}`;
                 xhr.send(formData);
             });
 

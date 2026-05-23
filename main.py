@@ -14,6 +14,7 @@ import sys
 import time
 import traceback
 import tempfile
+import threading
 import zipfile
 from dataclasses import dataclass
 from pathlib import Path
@@ -23,6 +24,9 @@ from flask import Flask, request, send_file, render_template, Response
 
 
 VALID_QUALITIES = ['standard', 'exhigh', 'lossless', 'hires', 'sky', 'jyeffect', 'jymaster', 'dolby']
+PLAYLIST_PROGRESS_TTL_SECONDS = 60 * 60
+PLAYLIST_DOWNLOAD_PROGRESS: Dict[str, Dict[str, Any]] = {}
+PLAYLIST_PROGRESS_LOCK = threading.Lock()
 
 try:
     from music_api import (
@@ -212,6 +216,59 @@ class MusicAPIService:
 config = APIConfig()
 app = Flask(__name__)
 api_service = MusicAPIService(config)
+
+
+def _cleanup_playlist_progress(now: Optional[float] = None) -> None:
+    """清理过期的歌单下载进度"""
+    current_time = now or time.time()
+    expired_ids = [
+        progress_id
+        for progress_id, progress in PLAYLIST_DOWNLOAD_PROGRESS.items()
+        if current_time - float(progress.get('updated_at', current_time)) > PLAYLIST_PROGRESS_TTL_SECONDS
+    ]
+    for progress_id in expired_ids:
+        PLAYLIST_DOWNLOAD_PROGRESS.pop(progress_id, None)
+
+
+def _update_playlist_progress(progress_id: Optional[str], **updates: Any) -> None:
+    """更新歌单下载进度"""
+    if not progress_id:
+        return
+
+    now = time.time()
+    with PLAYLIST_PROGRESS_LOCK:
+        _cleanup_playlist_progress(now)
+        progress = PLAYLIST_DOWNLOAD_PROGRESS.setdefault(progress_id, {
+            'status': 'pending',
+            'stage': 'waiting',
+            'playlist_id': '',
+            'playlist_name': '',
+            'total': 0,
+            'completed': 0,
+            'success': 0,
+            'failed': 0,
+            'percent': 0,
+            'current': '',
+            'current_index': 0,
+            'message': '等待开始打包',
+            'started_at': int(now)
+        })
+        progress.update(updates)
+
+        total = int(progress.get('total') or 0)
+        completed = int(progress.get('completed') or 0)
+        if total > 0 and 'percent' not in updates:
+            progress['percent'] = min(100, max(0, round(completed * 100 / total)))
+
+        progress['updated_at'] = now
+
+
+def _get_playlist_progress(progress_id: str) -> Optional[Dict[str, Any]]:
+    """读取歌单下载进度"""
+    with PLAYLIST_PROGRESS_LOCK:
+        _cleanup_playlist_progress()
+        progress = PLAYLIST_DOWNLOAD_PROGRESS.get(progress_id)
+        return dict(progress) if progress else None
 
 
 @app.before_request
@@ -600,34 +657,116 @@ def download_music_api():
         return APIResponse.error(f"下载异常: {str(e)}", 500)
 
 
+@app.route('/playlist/download/progress', methods=['GET'])
+@app.route('/Playlist/Download/Progress', methods=['GET'])  # 向后兼容
+def playlist_download_progress_api():
+    """获取歌单打包下载进度"""
+    try:
+        data = api_service._safe_get_request_data()
+        progress_id = data.get('progress_id') or data.get('job_id')
+
+        validation_error = api_service._validate_request_params({'progress_id': progress_id})
+        if validation_error:
+            return validation_error
+
+        progress = _get_playlist_progress(str(progress_id))
+        if not progress:
+            return APIResponse.error("进度不存在或已过期", 404)
+
+        return APIResponse.success(progress, "获取歌单下载进度成功")
+
+    except Exception as e:
+        api_service.logger.error(f"获取歌单下载进度异常: {e}\n{traceback.format_exc()}")
+        return APIResponse.error(f"获取歌单下载进度失败: {str(e)}", 500)
+
+
 @app.route('/playlist/download', methods=['GET', 'POST'])
 @app.route('/Playlist/Download', methods=['GET', 'POST'])  # 向后兼容
 def download_playlist_api():
     """下载歌单为ZIP文件"""
     zip_path = None
+    progress_id = None
     try:
         data = api_service._safe_get_request_data()
         playlist_id = data.get('id')
         quality = data.get('quality', 'lossless')
+        progress_id = data.get('progress_id') or data.get('job_id')
+
+        _update_playlist_progress(
+            progress_id,
+            status='running',
+            stage='starting',
+            playlist_id=str(playlist_id or ''),
+            total=0,
+            completed=0,
+            success=0,
+            failed=0,
+            percent=0,
+            current='',
+            current_index=0,
+            message='正在准备歌单下载...'
+        )
 
         validation_error = api_service._validate_request_params({'playlist_id': playlist_id})
         if validation_error:
+            _update_playlist_progress(
+                progress_id,
+                status='failed',
+                stage='failed',
+                message='缺少歌单ID',
+                percent=100
+            )
             return validation_error
 
         if quality not in VALID_QUALITIES:
+            _update_playlist_progress(
+                progress_id,
+                status='failed',
+                stage='failed',
+                message=f"无效的音质参数：{quality}",
+                percent=100
+            )
             return APIResponse.error(f"无效的音质参数，支持: {', '.join(VALID_QUALITIES)}")
 
         playlist_id = api_service._extract_music_id(playlist_id)
+        _update_playlist_progress(
+            progress_id,
+            stage='fetching',
+            playlist_id=str(playlist_id),
+            message='正在读取歌单信息...'
+        )
         cookies = api_service._get_cookies()
         playlist = playlist_detail(playlist_id, cookies)
         tracks = playlist.get('tracks', []) if playlist else []
 
         if not tracks:
+            _update_playlist_progress(
+                progress_id,
+                status='failed',
+                stage='failed',
+                total=0,
+                completed=0,
+                percent=100,
+                message='歌单没有可下载的歌曲'
+            )
             return APIResponse.error("歌单没有可下载的歌曲", 404)
 
         playlist_name = playlist.get('name') or f"playlist_{playlist_id}"
         safe_playlist_name = api_service.downloader._sanitize_filename(f"{playlist_name} [{quality}]")
         download_name = f"{safe_playlist_name}.zip"
+        total_tracks = len(tracks)
+        _update_playlist_progress(
+            progress_id,
+            status='running',
+            stage='downloading',
+            playlist_name=playlist_name,
+            total=total_tracks,
+            completed=0,
+            success=0,
+            failed=0,
+            percent=0,
+            message=f"准备下载并打包 {total_tracks} 首歌"
+        )
 
         fd, zip_filename = tempfile.mkstemp(
             prefix=f"playlist_{playlist_id}_",
@@ -657,6 +796,18 @@ def download_playlist_api():
                 track_id = track.get('id')
                 track_name = track.get('name') or f"歌曲{track_id}"
                 artists = track.get('artists') or "未知歌手"
+                current_name = f"{artists} - {track_name}"
+
+                _update_playlist_progress(
+                    progress_id,
+                    stage='downloading',
+                    current=current_name,
+                    current_index=index,
+                    completed=index - 1,
+                    success=success_count,
+                    failed=len(failures),
+                    message=f"正在处理第 {index}/{total_tracks} 首：{track_name}"
+                )
 
                 try:
                     download_result = api_service.downloader.download_music_file(int(track_id), quality)
@@ -676,10 +827,24 @@ def download_playlist_api():
                     arcname = unique_arcname(f"{arc_base}{source_path.suffix}")
                     zip_file.write(source_path, arcname=arcname)
                     success_count += 1
+                    _update_playlist_progress(
+                        progress_id,
+                        completed=index,
+                        success=success_count,
+                        failed=len(failures),
+                        message=f"已完成 {index}/{total_tracks} 首"
+                    )
 
                 except Exception as e:
                     failures.append(f"{index:03d}. {track_name} ({track_id}) - {e}")
                     api_service.logger.warning(f"歌单歌曲下载失败: {track_id} - {e}")
+                    _update_playlist_progress(
+                        progress_id,
+                        completed=index,
+                        success=success_count,
+                        failed=len(failures),
+                        message=f"第 {index}/{total_tracks} 首失败，继续处理"
+                    )
 
             if failures:
                 failure_text = "以下歌曲下载失败：\n" + "\n".join(failures)
@@ -691,7 +856,31 @@ def download_playlist_api():
             except Exception:
                 pass
             failure_summary = "；".join(failures[:5]) if failures else "未知错误"
+            _update_playlist_progress(
+                progress_id,
+                status='failed',
+                stage='failed',
+                completed=total_tracks,
+                success=0,
+                failed=len(failures),
+                percent=100,
+                message=f"歌单下载失败，所有歌曲均下载失败：{failure_summary}"
+            )
             return APIResponse.error(f"歌单下载失败，所有歌曲均下载失败：{failure_summary}", 500)
+
+        _update_playlist_progress(
+            progress_id,
+            status='completed',
+            stage='completed',
+            completed=total_tracks,
+            success=success_count,
+            failed=len(failures),
+            percent=100,
+            current='',
+            current_index=total_tracks,
+            filename=download_name,
+            message=f"打包完成，成功 {success_count} 首，失败 {len(failures)} 首"
+        )
 
         response = send_file(
             str(zip_path),
@@ -718,6 +907,13 @@ def download_playlist_api():
                 zip_path.unlink(missing_ok=True)
             except Exception:
                 pass
+        _update_playlist_progress(
+            progress_id,
+            status='failed',
+            stage='failed',
+            percent=100,
+            message=f"下载歌单失败: {str(e)}"
+        )
         api_service.logger.error(f"下载歌单异常: {e}\n{traceback.format_exc()}")
         return APIResponse.error(f"下载歌单失败: {str(e)}", 500)
 
@@ -736,6 +932,7 @@ def api_info():
                 '/search': 'GET/POST - 搜索音乐',
                 '/playlist': 'GET/POST - 获取歌单详情',
                 '/playlist/download': 'GET/POST - 下载歌单ZIP',
+                '/playlist/download/progress': 'GET - 获取歌单ZIP下载进度',
                 '/album': 'GET/POST - 获取专辑详情',
                 '/download': 'GET/POST - 下载音乐',
                 '/api/info': 'GET - API信息'
