@@ -140,8 +140,25 @@
                             <label for="playlist_id" class="form-label">歌单ID或链接</label>
                             <input type="text" id="playlist_id" class="form-control" placeholder="输入歌单ID或网易云歌单链接">
                         </div>
+                        <div class="mb-3">
+                            <label for="playlist_quality" class="form-label">下载音质</label>
+                            <select id="playlist_quality" class="form-select">
+                                <option value="standard">标准音质</option>
+                                <option value="exhigh">极高音质</option>
+                                <option value="lossless" selected>无损音质</option>
+                                <option value="hires">Hires音质</option>
+                                <option value="sky">沉浸环绕声</option>
+                                <option value="jyeffect">高清环绕声</option>
+                                <option value="jymaster">超清母带</option>
+                                <option value="dolby">杜比全景声</option>
+                            </select>
+                        </div>
                         <div class="text-center">
                             <button type="button" id="playlist-btn" class="btn btn-warning w-50">解析歌单</button>
+                            <div id="playlist-parse-status" class="mt-2 small text-muted d-none" aria-live="polite">
+                                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                正在解析歌单，请稍候...
+                            </div>
                         </div>
                     </div>
                     <div id="album-area" style="display:none;">
@@ -226,7 +243,11 @@
                         </div>
                     </div>
                     <div id="playlist-desc" class="mb-2 text-secondary small"></div>
-                    <div>共 <span id="playlist-count"></span> 首歌</div>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div>共 <span id="playlist-count"></span> 首歌</div>
+                        <button type="button" id="playlist-download-all" class="btn btn-success btn-sm">下载全部</button>
+                    </div>
+                    <div id="playlist-download-status" class="mt-2 text-muted small"></div>
                 </div>
             </div>
             <ul class="list-group mt-3" id="playlist-tracks"></ul>
@@ -326,6 +347,40 @@
                 return result;
             }
 
+            function getDownloadFilename(xhr, fallback) {
+                const encodedFilename = xhr.getResponseHeader('X-Download-Filename');
+                return encodedFilename ? decodeURIComponent(encodedFilename) : fallback;
+            }
+
+            function saveBlob(blob, filename) {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }
+
+            function readBlobError(xhr, fallback, callback) {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    let message = fallback;
+                    try {
+                        const data = JSON.parse(reader.result);
+                        message = data.message || fallback;
+                    } catch (e) {
+                        if (reader.result) message = reader.result;
+                    }
+                    callback(message);
+                };
+                reader.onerror = function() {
+                    callback(fallback);
+                };
+                reader.readAsText(xhr.response);
+            }
+
             function extractLinks(text) {
                 var regex = /https?:\/\/\S+/g;
                 var matches = text.match(regex);
@@ -335,15 +390,15 @@
                     return '';
                 }
             }
-    
+
             function checkValidLink(link) {
-                if (link.indexOf("http") === -1 || 
+                if (link.indexOf("http") === -1 ||
                     (link.indexOf("music.163.com") === -1 && link.indexOf("163cn.tv") === -1)) {
                     return false;
                 }
                 return true;
             }
-    
+
             function extractAndCheckId(text) {
                 var link = extractLinks(text);
                 if (checkValidLink(link)) {
@@ -514,6 +569,7 @@
 
             // 歌单解析
             $('#playlist-btn').on('click', function() {
+                const button = $(this);
                 let pid = $('#playlist_id').val().trim();
                 if (!pid) {
                     alert('请输入歌单ID或链接');
@@ -522,7 +578,9 @@
                 // 支持直接粘贴歌单链接
                 const idMatch = pid.match(/playlist\?id=(\d+)/);
                 if (idMatch) pid = idMatch[1];
-                $.get('/Playlist', { id: pid }, function(data) {
+                button.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>解析中...');
+                $('#playlist-parse-status').removeClass('d-none');
+                $.get('/Playlist', { id: pid }, null, 'json').done(function(data) {
                     if (data.status === 200) {
                         const pl = data.data.playlist;
                         $('#playlist-cover').attr('src', pl.coverImgUrl);
@@ -530,6 +588,8 @@
                         $('#playlist-creator').text('by ' + pl.creator);
                         $('#playlist-desc').text(pl.description || '');
                         $('#playlist-count').text(pl.trackCount);
+                        $('#playlist-download-all').data('id', pid).prop('disabled', false).text('下载全部');
+                        $('#playlist-download-status').text('');
                         $('#playlist-tracks').empty();
                         pl.tracks.forEach(function(song, idx) {
                             const item = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -539,7 +599,7 @@
                                 </div>
                                 <div>
                                     <button class="btn btn-sm btn-outline-primary select-song me-2" data-id="${song.id}" data-name="${song.name}">解析</button>
-                                    <button class="btn btn-sm btn-success download-song" data-id="${song.id}" data-name="${song.name}">下载</button>
+                                    <button class="btn btn-sm btn-success playlist-download-song" data-id="${song.id}" data-name="${song.name}">下载</button>
                                 </div>
                             </li>`;
                             $('#playlist-tracks').append(item);
@@ -549,7 +609,13 @@
                         $('#playlist-result').removeClass('d-none');
                         $('#playlist-tracks').html('<li class="list-group-item">歌单解析失败：'+data.data.msg+'</li>');
                     }
-                }, 'json');
+                }).fail(function() {
+                    $('#playlist-result').removeClass('d-none');
+                    $('#playlist-tracks').html('<li class="list-group-item">歌单解析失败，请检查网络后重试</li>');
+                }).always(function() {
+                    button.prop('disabled', false).text('解析歌单');
+                    $('#playlist-parse-status').addClass('d-none');
+                });
             });
 
             // 专辑解析
@@ -596,47 +662,39 @@
             $('#download-btn').on('click', function() {
                 const musicId = $('#download_id').val().trim();
                 const quality = $('#download_quality').val();
-                
+
                 if (!musicId) {
                     alert('请输入音乐ID或URL');
                     return;
                 }
-                
+
                 // 提取ID（支持URL格式）
                 let processedId = musicId;
                 const idMatch = musicId.match(/song\?id=(\d+)/);
                 if (idMatch) {
                     processedId = idMatch[1];
                 }
-                
+
                 // 显示进度条
                 $('#download-progress').removeClass('d-none');
                 $('#download-btn').prop('disabled', true).text('下载中...');
-                
+
                 // 使用XMLHttpRequest来处理下载并获取响应头
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', '/Download', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.responseType = 'blob';
-                
+
                 xhr.onload = function() {
                     if (xhr.status === 200) {
                         // 获取自定义响应头
                         const downloadMessage = xhr.getResponseHeader('X-Download-Message');
                         const encodedFilename = xhr.getResponseHeader('X-Download-Filename');
                         const filename = encodedFilename ? decodeURIComponent(encodedFilename) : 'music.flac';
-                        
+
                         // 创建下载链接
-                        const blob = xhr.response;
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = filename || 'music.flac';
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        window.URL.revokeObjectURL(url);
-                        
+                        saveBlob(xhr.response, filename || 'music.flac');
+
                         // 显示完成提示
                         alert('✅ 音乐文件下载完成！');
                         console.log(`下载完成: ${filename}`);
@@ -646,20 +704,108 @@
                     } else {
                         alert('下载失败，请重试');
                     }
-                    
+
                     // 重置按钮状态
                     $('#download-progress').addClass('d-none');
                     $('#download-btn').prop('disabled', false).text('下载音乐');
                 };
-                
+
                 xhr.onerror = function() {
                     alert('下载出错，请重试');
                     $('#download-progress').addClass('d-none');
                     $('#download-btn').prop('disabled', false).text('下载音乐');
                 };
-                
+
                 // 发送请求
                 const formData = `id=${encodeURIComponent(processedId)}&quality=${encodeURIComponent(quality)}`;
+                xhr.send(formData);
+            });
+
+            // 歌单中的单首原地下载
+            $(document).on('click', '.playlist-download-song', function() {
+                const button = $(this);
+                const musicId = button.data('id');
+                const songName = button.data('name') || musicId;
+                const quality = $('#playlist_quality').val();
+
+                if (!musicId) {
+                    alert('无法获取音乐ID');
+                    return;
+                }
+
+                button.prop('disabled', true).text('下载中...');
+                $('#playlist-download-status').text(`正在下载：${songName}`);
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/Download', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.responseType = 'blob';
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        const filename = getDownloadFilename(xhr, `${songName}.flac`);
+                        saveBlob(xhr.response, filename);
+                        $('#playlist-download-status').text(`已下载：${songName}`);
+                    } else {
+                        readBlobError(xhr, '下载失败，请重试', function(message) {
+                            $('#playlist-download-status').text(message);
+                            alert(message);
+                        });
+                    }
+                    button.prop('disabled', false).text('下载');
+                };
+
+                xhr.onerror = function() {
+                    $('#playlist-download-status').text('下载出错，请重试');
+                    alert('下载出错，请重试');
+                    button.prop('disabled', false).text('下载');
+                };
+
+                const formData = `id=${encodeURIComponent(musicId)}&quality=${encodeURIComponent(quality)}`;
+                xhr.send(formData);
+            });
+
+            // 歌单打包下载
+            $('#playlist-download-all').on('click', function() {
+                const button = $(this);
+                const playlistId = button.data('id') || $('#playlist_id').val().trim();
+                const quality = $('#playlist_quality').val();
+
+                if (!playlistId) {
+                    alert('请先解析歌单');
+                    return;
+                }
+
+                button.prop('disabled', true).text('打包中...');
+                $('#playlist-download-status').text('正在下载并打包歌单，请稍候...');
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/Playlist/Download', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.responseType = 'blob';
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        const filename = getDownloadFilename(xhr, 'playlist.zip');
+                        saveBlob(xhr.response, filename);
+                        $('#playlist-download-status').text(`歌单打包完成：${filename}`);
+                        alert('✅ 歌单打包下载完成！');
+                    } else {
+                        readBlobError(xhr, '歌单下载失败，请重试', function(message) {
+                            $('#playlist-download-status').text(message);
+                            alert(message);
+                        });
+                    }
+                    button.prop('disabled', false).text('下载全部');
+                };
+
+                xhr.onerror = function() {
+                    $('#playlist-download-status').text('歌单下载出错，请重试');
+                    alert('歌单下载出错，请重试');
+                    button.prop('disabled', false).text('下载全部');
+                };
+
+                const formData = `id=${encodeURIComponent(playlistId)}&quality=${encodeURIComponent(quality)}`;
                 xhr.send(formData);
             });
 
@@ -668,12 +814,12 @@
             $(document).on('click', '.download-song', function() {
                 const musicId = $(this).data('id');
                 const songName = $(this).data('name');
-                
+
                 if (!musicId) {
                     alert('无法获取音乐ID');
                     return;
                 }
-                
+
                 // 填充下载ID并跳转到下载功能区域
                 $('#download_id').val(musicId);
                 $('#mode-select').val('download').trigger('change');
@@ -683,4 +829,3 @@
     </script>
 </body>
 </html>
-
